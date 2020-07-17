@@ -212,7 +212,7 @@ const artists = [
 // console.log(artists[2].bio);
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-
+// console.log(artists[8]);
 artists[8].name = 'Vincent Van Gogh';
 // console.log(artists[8]);
 
@@ -236,21 +236,21 @@ function getArtistByIndex(array, index) {
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(arr) {
+
   const newArr = [];
 
   for (let i = 0; i < arr.length; i++) {
+
     const yearArr = arr[i].years.split(' ');
 
-    if (parseInt(yearArr[0]) > 1900) {
-      if (parseInt(yearArr[2]) < 2000) {
-        newArr.push(arr[i].name);
-      }
+    if (parseInt(yearArr[0]) > 1900 && parseInt(yearArr[2]) < 2000) {
+      newArr.push(arr[i].name);
     }
   }
   return newArr;
 }
 
-console.log(get20s(artists));
+// console.log(get20s(artists));
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
@@ -312,6 +312,7 @@ and returns an array with names of artists who painted more than 100 paintings.
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
 function lotsOfArt(arr) {
+
   const newArr = [];
 
   for (let i = 0; i < arr.length; i++) {
@@ -348,20 +349,52 @@ The function should console.log 50 chunks of HTML code that match the structure 
  
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(/* Code here */) {
+function getHTML(data) {
 
-  /* Code here */
-
+  for (const property in data) {
+    return `
+      <div id="artist">
+      <div class="image">
+        <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-by-vincent-van-gogh-vincent-van-gogh.jpg"/>
+      </div>
+      <div class = "name">
+        <a href="https://en.wikipedia.org/wiki/Vincent_van_Gogh">${data[property].name}</a>
+      </div>
+      <div class = "bio">${data[property].bio}</div>
+    </div>
+      `;
+  }
 }
+
+console.log(getHTML(artists));
 
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(/* Code here */) {
+function randomize(arr) {
+  const randomArr = [];
+  const newArr = [...arr];
 
-  /* Code here */
 
+  for (let i = 0; i < newArr.length; i++) {
+    let randomIndex = Math.floor(Math.random() * newArr.length);
+
+    randomArr.push(newArr[randomIndex]);
+  }
+  return randomArr;
 }
 
+// console.log(randomize(artists));
 
 /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
+
+// function get20sFilter(arr) {
+
+//   const yearArr = arr.filter(index => index.years.split(' '));
+
+//   const newArr = yearArr.filter(year => parseInt(year[0]) > 1900);
+
+//   return newArr;
+// }
+
+// console.log(get20sFilter(artists));
