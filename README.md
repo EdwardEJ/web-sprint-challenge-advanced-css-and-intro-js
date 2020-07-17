@@ -24,8 +24,13 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. How would you describe acessibility on the web to someone new to programming?
 2. Talk about 3 different things you can do to ensure your website is accessible. 
+
+
 3. How would you explain the concept of a variable to someone new to programming?
+  A variable is container that holds something. In this case that something would be information. And it could be just one thing like a number or a word. Or it could be a variety of things like a list of people each with lists of information on them.
+
 4. What is the purpose of using functions in code?
+  To be able to efficiently produce data given a variety of different data sets. As opposed to hard coding one particular function for one particular data set, functions can be written ambiguously to accommodate for various data sets and for effective coding.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
